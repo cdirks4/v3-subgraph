@@ -58,5 +58,17 @@
       "address": "0x8FdA5a7a8dCA67BBcDd10F02Fa0649A937215422",
       "startBlock": 12637075
     }
+  },
+  "sepolia": {
+    "Factory": {
+      "address": "0xC532a74256D3Db42D0Bf7a0400fEFDbad7694008",
+      "startBlock": 3920159
+    }
+  },
+  "story-testnet": {
+    "Factory": {
+      "address": "0x82ffccaa0d16c8fb0c5a433ffec709a2fbca3cb9",
+      "startBlock": 49759
+    }
   }
 }
