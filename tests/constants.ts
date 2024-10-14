@@ -3,6 +3,7 @@ import { assert, createMockedFunction, newMockEvent } from 'matchstick-as'
 
 import { handlePoolCreatedHelper } from '../src/mappings/factory'
 import { PoolCreated } from '../src/types/Factory/Factory'
+import { Factory as FactoryContract } from '../src/types/Factory/Factory'
 import { Pool, Token } from '../src/types/schema'
 import { SubgraphConfig } from '../src/utils/chains'
 import { ZERO_BD, ZERO_BI } from '../src/utils/constants'
@@ -142,7 +143,7 @@ export const getPoolFixture = (poolAddress: string): PoolFixture => {
   }
 }
 
-export const TEST_ETH_PRICE_USD = BigDecimal.fromString('2000')
+export const TEST_ETH_PRICE_USD = BigDecimal.fromString('2400')
 export const TEST_USDC_DERIVED_ETH = BigDecimal.fromString('1').div(BigDecimal.fromString('2000'))
 export const TEST_WETH_DERIVED_ETH = BigDecimal.fromString('1')
 
@@ -269,3 +270,8 @@ export const assertObjectMatches = (entityType: string, id: string, obj: string[
     assert.fieldEquals(entityType, id, obj[i][0], obj[i][1])
   }
 }
+
+export const ONE_BD = BigDecimal.fromString('1')
+export const BI_18 = BigInt.fromI32(18)
+
+export const factoryContract = FactoryContract.bind(Address.fromString(FACTORY_ADDRESS))
