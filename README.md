@@ -248,15 +248,16 @@ export function handleCollect(event: Collect): void {
 
 ## Step 3: Generate Code
 
-Run the following command to generate TypeScript types from your schema and ABIs:
+Run the following commands to generate TypeScript types from your schema and ABIs and build the project:
 
-
-
-```sh 
-graph codegen
+```sh
+npm run codegen
+npm run build
 ```
 
-This command generates code in the `generated/` directory.
+These commands will:
+1. Generate code in the `generated/` directory
+2. Build the subgraph for deployment
 
 ----------
 

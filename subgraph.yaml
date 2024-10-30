@@ -12,8 +12,8 @@ dataSources:
     network: story-testnet
     source:
       abi: Factory
-      address: '0x2D1bc93A4d0C23047577ac16C7Fe5CfEAb62B87B'
-      startBlock: 237600
+      address: '0x65B858f0Bb71EC7ED4656DC81B7495bfec34dF59'
+      startBlock: 580575
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -41,7 +41,7 @@ dataSources:
     name: NonfungiblePositionManager
     network: story-testnet
     source:
-      address: '0x5800Ab639a41E48f28d61c74d9Dc65B7ba0c9e2B' # Add the contract address
+      address: '0x2266edEB0cba8EBc9F8eC002634d995DC7fFf720' # Add the contract address
       abi: NonfungiblePositionManager
       startBlock: 238856 # Add the start block
     mapping:
