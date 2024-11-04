@@ -9,11 +9,20 @@ features:
 dataSources:
   - kind: ethereum/contract
     name: Factory
+<<<<<<< Updated upstream
     network: sepolia
+=======
+    network: odyssey-testnet
+>>>>>>> Stashed changes
     source:
       address: "0x0227628f3F023bb0B980b67D528571c95c6DaC1c"
       abi: Factory
+<<<<<<< Updated upstream
       startBlock: 3518270
+=======
+      address: '0x7d17CEe0E884f8F686415e9f9D0a2D980182a311'
+      startBlock: 135001
+>>>>>>> Stashed changes
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -36,10 +45,57 @@ dataSources:
       eventHandlers:
         - event: PoolCreated(indexed address,indexed address,indexed uint24,int24,address)
           handler: handlePoolCreated
+<<<<<<< Updated upstream
 templates:
   - kind: ethereum/contract
     name: Pool
     network: sepolia
+=======
+
+  - kind: ethereum/contract
+    name: NonfungiblePositionManager
+    network: odyssey-testnet
+    source:
+      address: '0xD3DCE6B713a0Da77E7d3888441575f5398c5C2e1' # Add the contract address
+      abi: NonfungiblePositionManager
+      startBlock: 148075 # Add the start block
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      file: ./src/mappings/position-manager.ts
+      entities:
+        - Pool
+        - Token
+        - Position # Include the Position entity
+      abis:
+        - name: NonfungiblePositionManager
+          file: ./abis/NonfungiblePositionManager.json
+        - name: Pool
+          file: ./abis/pool.json
+        - name: Factory
+          file: ./abis/factory.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        # - event: Approval(indexed address,indexed address,indexed uint256)
+        #   handler: handleApproval
+        # - event: ApprovalForAll(indexed address,indexed address,bool)
+        #   handler: handleApprovalForAll
+        - event: Collect(indexed uint256,address,uint256,uint256)
+          handler: handleCollect
+        - event: DecreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleDecreaseLiquidity
+        - event: IncreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleIncreaseLiquidity
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+
+templates:
+  - kind: ethereum/contract
+    name: Pool
+    network: odyssey-testnet
+>>>>>>> Stashed changes
     source:
       abi: Pool
     mapping:
