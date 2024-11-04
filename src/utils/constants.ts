@@ -10,4 +10,4 @@ export const ZERO_BD = BigDecimal.fromString('0')
 export const ONE_BD = BigDecimal.fromString('1')
 export const BI_18 = BigInt.fromI32(18)
 
-export const factoryContract = FactoryContract.bind(Address.fromString('0x2d1bc93a4d0c23047577ac16c7fe5cfeab62b87b'))
+export const factoryContract = FactoryContract.bind(Address.fromString('0x65B858f0Bb71EC7ED4656DC81B7495bfec34dF59'))
